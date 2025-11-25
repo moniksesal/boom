@@ -80,3 +80,66 @@ userInput.addEventListener("blur", startGame);
 restartBtn.addEventListener("click", () => {
     location.reload();
 });
+
+/* CORRECCIÓN DATA
+
+const userInput = document.getElementById("userInput"),
+      countdown = document.getElementById("countdown"),
+      result = document.getElementById("result"),
+      restart = document.getElementById("restart")
+
+let tiempo = 5
+let userNumber = 0
+
+const randomNumber = () => Math.floor(Math.random() * 3) + 1
+
+userInput.addEventListener("change", () => {
+  userNumber = userInput.value
+  console.log(userNumber)
+})
+
+
+function StartGame () {
+  count()
+  const mysteryNumber = new Promise(resolve => {
+    setTimeout(() => {
+      resolve(randomNumber())
+    }, 6000)
+  })
+  return mysteryNumber
+}
+
+StartGame()
+.then(number => {
+  let mensaje = ""
+  if(number == userNumber) {
+    mensaje = `
+    <h2 class="green">¡Has salvado el mundo!</h2>
+    <p>El número que has elegido es el ${userNumber} y el aleatorio es ${number}
+    `
+  } else {
+    mensaje = `
+    <h2 class="red">La bomba ha estallado</h2>
+    <p>El número que has elegido es el ${userNumber} y el aleatorio es ${number}
+  `
+  }
+  result.innerHTML = mensaje
+})
+
+function count () {
+  const intervalo = setInterval(() => {
+    console.log(tiempo)
+    if (tiempo === 0) {
+      clearInterval(intervalo)
+    } 
+    countdown.innerHTML = `<p class="red">Cuenta atrás: ${tiempo} segundos</p>`
+    console.log(tiempo)
+    tiempo--
+  }, 1000)
+}
+
+
+restart.addEventListener("click", () => {
+  location.reload()
+})
+  */
